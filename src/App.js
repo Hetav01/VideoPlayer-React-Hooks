@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import SearchBar from './components/SearchBar';
 import Youtube from "./API/Youtube";
 import VideoPlayer from './components/VideoPlayer';
+import VideoList from './components/VideoList';
 
 const App = () => {
 
@@ -10,22 +11,33 @@ const App = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     const searchYoutube = async(videoName) => {
-        const response = await Youtube.get("/search", "/videos", {
+        const response = await Youtube.get("/search", {
             params: {
                 q: videoName
             }
         });
+
         setVideos(response.data.items);
         setSelectedVideo(response.data.items[0]);
         console.log(response.data.items);
-
     };
     
+    const onVideoSelect = (video) => {
+        setSelectedVideo(video);
+    }
+
     return (
         <div>
             <Header  />
             <SearchBar onFormSubmit={searchYoutube} />
-            <VideoPlayer video={selectedVideo} />
+            <div className="videoSection">
+                <div className="playingVideo">
+                    <VideoPlayer video={selectedVideo} />
+                </div>
+                <div className="videoArray">
+                    <VideoList videos={videos} onVideoSelect={onVideoSelect} />
+                </div>
+            </div>
         </div>
     );
 };
