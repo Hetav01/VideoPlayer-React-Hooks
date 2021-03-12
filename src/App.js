@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Header from "./components/Header";
 import SearchBar from './components/SearchBar';
 import Youtube from "./API/Youtube";
+import VideoPlayer from './components/VideoPlayer';
 
 const App = () => {
 
@@ -9,19 +10,22 @@ const App = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     const searchYoutube = async(videoName) => {
-        const response = await Youtube.get("/search", {
+        const response = await Youtube.get("/search", "/videos", {
             params: {
                 q: videoName
             }
         });
         setVideos(response.data.items);
         setSelectedVideo(response.data.items[0]);
-    };
+        console.log(response.data.items);
 
+    };
+    
     return (
         <div>
             <Header  />
             <SearchBar onFormSubmit={searchYoutube} />
+            <VideoPlayer video={selectedVideo} />
         </div>
     );
 };
