@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.loadingDiv {
+    margin: 0 auto;
+    margin-top: 10%;
+    font-size: 2.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.videoPlayer {
+    display: flex;
+    margin-left: 4%;
+    flex-direction: column;
+    width: 65%;
+}
+
+.videoFrame {
+    align-self: auto;
+    margin-bottom: 1%;
+}
+
+.videoTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.description {
+    color: rgb(185, 184, 184);
+    font-size: 1.06rem;
+    width: 70%;
+    padding-bottom: 10%;
+    font-family: 'Montserrat', sans-serif;
+}

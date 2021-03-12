@@ -1,0 +1,4 @@
+.videoSection {
+    display: flex;
+    flex-direction: row;
+}

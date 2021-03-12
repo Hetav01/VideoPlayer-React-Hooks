@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.videoItem {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3%;
+}
+
+.content {
+    margin-left: 3%;
+}
+
+.snippetTitle {
+    margin-bottom: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.03rem;
+}
+
+.channelName {
+    color: rgb(185, 184, 184);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.005rem;
+}

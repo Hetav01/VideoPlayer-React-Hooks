@@ -1,18 +1,19 @@
 import React from 'react';
+import "../style/VideoPlayer.css";
 
 const VideoPlayer = ({video}) => {
     
     if (!video) {
         return (
-            <div>Loading...</div>
+            <div className="loadingDiv">Loading...</div>
         );
     };
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
     console.log(video);
     return (
-        <div>
+        <div className="videoPlayer">
             <div className="videoFrame">
-                <iframe src={videoSrc} title="videoPlayer"></iframe>
+                <iframe width="940" height="450" frameBorder="0" src={videoSrc} title="videoPlayer"></iframe>
             </div>
             <div className="videoDetails">
                 <h4 className="videoTitle">{video.snippet.title}</h4>

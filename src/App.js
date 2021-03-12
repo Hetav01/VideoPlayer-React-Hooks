@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import Youtube from "./API/Youtube";
 import VideoPlayer from './components/VideoPlayer';
 import VideoList from './components/VideoList';
+import "./style/app.css";
 
 const App = () => {
 
@@ -31,12 +32,8 @@ const App = () => {
             <Header  />
             <SearchBar onFormSubmit={searchYoutube} />
             <div className="videoSection">
-                <div className="playingVideo">
                     <VideoPlayer video={selectedVideo} />
-                </div>
-                <div className="videoArray">
                     <VideoList videos={videos} onVideoSelect={onVideoSelect} />
-                </div>
             </div>
         </div>
     );
